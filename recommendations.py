@@ -11,6 +11,15 @@ critics={
         ,  'You, Me and Dupree': 2.5
         ,  'The Night Listener': 3.0
     },
+   'Lisa Clone': 
+    {  
+           'Lady in the Water': 2.5
+        ,  'Snakes on a Plane': 3.5
+        ,  'Just My Luck': 3.0
+        ,  'Superman Returns': 3.5
+        ,  'You, Me and Dupree': 2.5
+        ,  'The Night Listener': 3.0
+    },    
  
    'Gene Seymour': 
     {
@@ -85,7 +94,7 @@ def sim_distance(prefs, person1, person2):
     # (a1 - b1)**2 + (a2 - b2)**2 + .. + (an - bn)**2
     sum_of_squares = sum( [ pow( prefs[person1][item] - prefs[person2][item], 2 )  for item in similar_items ] )
     
-    return 1 / sqrt(sum_of_squares)
+    return 1 /(1 + sqrt(sum_of_squares))
     
     
 def sim_pearson(prefs, p1, p2):    
